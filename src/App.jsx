@@ -44,7 +44,6 @@ function App() {
     });
     setSortedBy('lowest');
   };
-  console.log(data);
 
   return (
     <>
