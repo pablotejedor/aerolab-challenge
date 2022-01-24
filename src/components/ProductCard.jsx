@@ -16,7 +16,7 @@ import { redeemProduct } from '../services/apiService';
 import imgBuy from '../assets/icons/buy-blue.svg';
 import imgCoin from '../assets/icons/coin.svg';
 function ProductCard({ product, data, setData }) {
-  const canBePurchased = product.cost > data.userData.points;
+  const cantBePurchased = product.cost > data.userData.points;
 
   const toast = useToast();
 
@@ -61,7 +61,7 @@ function ProductCard({ product, data, setData }) {
               w={'252px'}
               h={'182px'}
             >
-              {canBePurchased && (
+              {cantBePurchased && (
                 <Stack
                   position={'absolute'}
                   top={2}
@@ -118,7 +118,7 @@ function ProductCard({ product, data, setData }) {
                   color={'gray.800'}
                   fontSize={'1.2em'}
                 >
-                  <Button variant={'ghost'} isDisabled={canBePurchased}>
+                  <Button variant={'ghost'} isDisabled={cantBePurchased}>
                     <Image
                       src={imgBuy}
                       h={7}
